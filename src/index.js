@@ -1,6 +1,7 @@
 import "./styles.css";
 import { createHomePage } from "./home.js";
 import { createMenuPage } from "./menu.js";
+import { createAboutPage } from "./about.js";
 
 // Create a single instance of elements
  // Flag to prevent duplicate initialization
@@ -19,7 +20,6 @@ function createMain() {
 }
 
 function initializePage() {
-   
     
     const contentDiv = document.getElementById('content');
     contentDiv.appendChild(createMain());
@@ -34,6 +34,12 @@ function initializePage() {
         clearContent();
         contentDiv.appendChild(createMenuPage());
     });
+
+    document.getElementById('aboutBtn').addEventListener("click",()=>{
+        clearContent();
+        contentDiv.appendChild(createAboutPage());
+    }
+    )
 
     
 }
